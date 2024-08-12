@@ -1,0 +1,9 @@
+openai==0.27.5
+googlemaps==4.8.0
+geopy==2.3.0
+opencv-python==4.7.0.72
+deepface==0.0.73
+pytube==12.1.0
+SpeechRecognition==3.10.0
+pyttsx3==2.90
+python-dotenv==1.0.0
