@@ -1,69 +1,86 @@
-Autonomous Vehicle Assistant
+# Self-Driving Car Assistant
 
-This project creates an autonomous vehicle assistant that integrates conversational AI, voice processing, real-time navigation, and webcam-based interactions. The assistant, named "Friday," leverages OpenAI’s GPT-4 model to interact with passengers, provide navigation instructions, and respond to voice commands.
+Welcome to the Self-Driving Car Assistant project! This repository contains code for an intelligent assistant for autonomous vehicles, designed to interact with passengers, manage navigation, and respond to various commands. 
 
-Features
-Conversational AI: Uses OpenAI GPT-4 to handle passenger queries, providing natural and helpful responses.
-Voice Command Processing: Recognizes and responds to voice commands using speech_recognition and pyttsx3 for text-to-speech.
-Navigation: Integrates Google Maps API for route planning, with options to avoid tolls.
-Geolocation: Retrieves current location details and addresses using geopy.
-Webcam Processing: Detects faces and processes age information using OpenCV and DeepFace, simulating door status.
-YouTube Integration: Searches for and plays YouTube videos based on user commands.
-Installation
-To set up the project, follow these steps:
+## Features
 
-Clone the Repository:
+- **Voice Commands**: The assistant can recognize and process voice commands for various tasks.
+- **Face Detection and Age Recognition**: Uses a webcam to detect faces and estimate age for personalized greetings and reminders.
+- **Navigation**: Provides driving directions using Google Maps API, with options to avoid ERP (Electronic Road Pricing) where applicable.
+- **YouTube Integration**: Can search and play YouTube videos based on user requests.
+- **Text-to-Speech**: Converts text responses into speech to interact with passengers.
 
-bash
-Copy code
-git clone https://github.com/yourusername/your-repository-name.git
-cd your-repository-name
-Install Dependencies:
+## Installation
 
-Make sure you have Python 3.x installed. Then, install the required packages using pip:
+1. **Clone the repository:**
 
-bash
-Copy code
+    ```bash
+    git clone https://github.com/yourusername/self-driving-car-assistant.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd self-driving-car-assistant
+    ```
+
+3. **Create a virtual environment (optional but recommended):**
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+
+4. **Install the required dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5. **Set up environment variables:**
+
+    Create a `.env` file in the project directory and add your API keys:
+
+    ```env
+    OPENAI_API_KEY=your_openai_api_key
+    GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+    ```
+
+## Usage
+
+1. **Run the application:**
+
+    ```bash
+    python main.py
+    ```
+
+2. **Interact with the assistant:**
+
+    - **Voice Commands**: Speak commands like "Play a song" or "Navigate to Ngee Ann Poly".
+    - **Text Commands**: Type commands and get responses via the terminal.
+
+## Key Components
+
+- **`main.py`**: Main script that runs the assistant, handles voice and text commands, and integrates various features.
+- **`requirements.txt`**: Lists the necessary Python packages for the project.
+- **`.env`**: Contains environment variables for API keys.
+
+## Dependencies
+
+The project relies on the following Python packages:
+
+- `openai`
+- `googlemaps`
+- `geopy`
+- `opencv-python`
+- `deepface`
+- `pytube`
+- `SpeechRecognition`
+- `pyttsx3`
+- `python-dotenv`
+
+Install these packages using:
+
+```bash
 pip install -r requirements.txt
-Set Up Environment Variables:
 
-Create a .env file in the root directory and add your API keys:
-
-plaintext
-Copy code
-OPENAI_API_KEY=your_openai_api_key
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-Usage
-Run the Assistant:
-
-Start the assistant by running the main script:
-
-bash
-Copy code
-python assistant.py
-Voice Commands:
-
-The assistant listens for commands starting with "Friday." Commands include requests for navigation, playing songs, checking the time, and more.
-
-Simulate Door Status:
-
-The assistant simulates door opening and closing using the webcam. Press 'd' to simulate opening and 'c' to simulate closing.
-
-Code Structure
-assistant.py: Main script for running the assistant. Handles voice commands, navigation, and interactions.
-requirements.txt: List of Python dependencies required for the project.
-.env: Configuration file for storing API keys and other sensitive information.
-Dependencies
-openai: For interacting with GPT-4.
-googlemaps: For route planning and navigation.
-geopy: For geolocation services.
-cv2 (OpenCV): For image processing and face detection.
-deepface: For face analysis and age detection.
-pytube: For searching and playing YouTube videos.
-speech_recognition: For voice command recognition.
-pyttsx3: For text-to-speech conversion.
-dotenv: For managing environment variables.
-Challenges & Future Work
-Face Detection Accuracy: Improving the accuracy of face detection and age estimation.
-Voice Command Recognition: Enhancing the robustness of voice command recognition in noisy environments.
-API Rate Limits: Managing API rate limits and optimizing requests to avoid service interruptions.
